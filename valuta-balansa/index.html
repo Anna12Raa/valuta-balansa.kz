@@ -41,36 +41,110 @@
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- Hero -->
-<section class="hero" id="hero">
+  <section class="hero" id="hero">
     <div class="hero-bg">
-        <div class="hero-circle c1"></div>
-        <div class="hero-circle c2"></div>
-        <div class="hero-circle c3"></div>
+      <div class="hero-circle c1"></div>
+      <div class="hero-circle c2"></div>
+      <div class="hero-circle c3"></div>
     </div>
-    <div class="container hero-content">
-        <h1 class="hero-title">Валюта Баланса</h1>
-        <p class="hero-subtitle">Ваш бизнес — наша забота.<br>Бухгалтерия и кадры под ключ</p>
-        <p class="hero-desc">Профессиональное бухгалтерское, кадровое и тендерное сопровождение для ИП и ТОО в Казахстане</p>
-        <div class="hero-buttons">
-            <a href="#contacts" class="btn btn-gold">Получить консультацию</a>
-            <a href="#services" class="btn btn-outline">Наши услуги</a>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge fade-in"><i class="dot"></i> Бухгалтерия · Кадры · Тендеры · Казахстан</span>
+        <h1 class="fade-in">Финансовый <span class="grad">баланс</span><br>вашего бизнеса</h1>
+        <p class="hero__lead fade-in">Ведём учёт, кадры и государственные закупки для ИП и ТОО — прозрачно, по закону РК и без вашего участия в рутине.</p>
+        <div class="hero__actions fade-in">
+          <a href="#contact-form" class="btn btn-gold">Бесплатная консультация <span class="btn__arrow">→</span></a>
+          <a class="btn btn-outline" href="#services">Услуги и цены</a>
         </div>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-num">3+</span>
-                <span class="stat-label">Направления услуг</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">₸</span>
-                <span class="stat-label">Прозрачные цены</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">24/7</span>
-                <span class="stat-label">Поддержка клиентов</span>
-            </div>
+        <div class="hero__stats fade-in">
+          <div class="stat"><b data-count="3" data-suffix="+">3+</b><span>направления услуг</span></div>
+          <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>прозрачные цены</span></div>
+          <div class="stat"><b>24/7</b><span>поддержка клиентов</span></div>
         </div>
+      </div>
+
+      <aside class="hero__card fade-in">
+        <div class="hero-calc">
+          <div class="hero-calc-head">
+            <h3>Калькулятор стоимости</h3>
+            <span class="hero-calc-pill"><i class="pill-dot"></i>онлайн расчёт</span>
+          </div>
+
+          <div class="hero-calc-field">
+            <label class="hero-calc-label">Организационно-правовая форма:</label>
+            <div class="hero-calc-seg" id="segForm">
+              <button type="button" class="hero-calc-seg-btn is-active" data-form="ip">ИП</button>
+              <button type="button" class="hero-calc-seg-btn" data-form="too">ТОО</button>
+            </div>
+          </div>
+
+          <div class="hero-calc-field">
+            <label class="hero-calc-label">Налоговый режим:</label>
+            <div class="hero-calc-seg" id="segMode">
+              <button type="button" class="hero-calc-seg-btn is-active" data-mode="special">Спецрежим (упрощёнка)</button>
+              <button type="button" class="hero-calc-seg-btn" data-mode="general">Общеустановленный (ОУР)</button>
+            </div>
+          </div>
+
+          <div class="hero-calc-slider-box">
+            <div class="hero-calc-slider-head">
+              <span>Сотрудников в штате:</span>
+              <b id="empOut" class="hero-calc-emp-badge">5</b>
+            </div>
+            <input type="range" id="calcEmp" class="hero-calc-range" min="1" max="30" value="5" step="1">
+            <div class="hero-calc-hint">До 5 сотрудников включено в тариф (свыше: +5 000 ₸/сотр.)</div>
+          </div>
+
+          <div class="hero-calc-field">
+            <label class="hero-calc-label">Дополнительные опции:</label>
+            <div class="hero-calc-chips">
+              <label class="hero-calc-chip">
+                <input type="checkbox" id="chkNds" data-name="НДС" data-add="40000">
+                <span>НДС (+40 000 ₸)</span>
+              </label>
+              <label class="hero-calc-chip">
+                <input type="checkbox" id="chkVed" data-name="ВЭД" data-add="100000">
+                <span>ВЭД (+100 000 ₸)</span>
+              </label>
+              <label class="hero-calc-chip">
+                <input type="checkbox" id="chkTransport" data-name="Транспорт" data-add="10000">
+                <span>Транспорт (+10 000 ₸)</span>
+              </label>
+              <label class="hero-calc-chip">
+                <input type="checkbox" id="chkLand" data-name="Земля" data-add="10000">
+                <span>Земля (+10 000 ₸)</span>
+              </label>
+              <label class="hero-calc-chip">
+                <input type="checkbox" id="chkProperty" data-name="Имущество" data-add="10000">
+                <span>Имущество (+10 000 ₸)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="hero-calc-total-box">
+            <div class="hero-calc-total-label">Итого в месяц:</div>
+            <div class="hero-calc-total-amount">
+              <b id="calcTotal" class="hero-calc-price">75 000 ₸</b>
+              <span class="hero-calc-period">ориентировочно</span>
+            </div>
+          </div>
+
+          <div class="hero-calc-actions">
+            <button type="button" class="btn btn-gold btn-calc-order" id="calcOrderBtn">
+              <span>Заказать по расчёту</span>
+              <span class="btn__arrow">→</span>
+            </button>
+            <a href="https://wa.me/77012044844" target="_blank" rel="noopener noreferrer" class="btn-calc-wa" id="calcWaBtn" title="Отправить расчёт в WhatsApp">
+              <svg viewBox="0 0 32 32" width="18" height="18"><path fill="currentColor" d="M16.004 0C7.165 0 .002 7.163.002 16c0 2.825.737 5.574 2.137 8.004L.003 32l8.207-2.09A15.933 15.933 0 0016.004 32c8.838 0 15.998-7.162 15.998-16S24.842 0 16.004 0zm0 29.297a13.26 13.26 0 01-6.764-1.85l-.486-.288-5.03 1.32 1.342-4.9-.316-.502A13.212 13.212 0 012.706 16c0-7.335 5.966-13.297 13.298-13.297S29.3 8.665 29.3 16s-5.964 13.297-13.296 13.297zm7.29-9.96c-.4-.2-2.366-1.167-2.733-1.3-.367-.133-.633-.2-.9.2s-1.033 1.3-1.267 1.567c-.233.267-.467.3-.867.1s-1.688-.622-3.216-1.984c-1.189-1.06-1.992-2.37-2.225-2.77-.233-.4-.025-.616.175-.816.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5s-1.4 1.367-1.4 3.334 1.433 3.867 1.633 4.134c.2.267 2.823 4.31 6.84 6.043.955.413 1.7.659 2.281.843.958.305 1.832.262 2.522.159.77-.115 2.367-.968 2.7-1.902.333-.934.333-1.734.233-1.902-.1-.167-.367-.267-.767-.467z"/></svg>
+              <span>Отправить расчёт в WhatsApp</span>
+            </a>
+          </div>
+          <p class="hero-calc-note">Расчёт предварительный — финальная стоимость фиксируется в договоре после консультации.</p>
+        </div>
+      </aside>
     </div>
-</section>
+  </section>
 
 <div class="gold-divider"></div>
 
